@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Roboto";
+    src: local("Oxygen"), url(./assets/fonts/Roboto-Regular.ttf) format("truetype");
+}
+
+.txtBanner h1,
+.txtBanner p {
+    font-family: "Roboto";
+    font-size: 30px;
+    color: darkblue;
+}
+
+.img-carrossel {
+    object-fit: cover;
+    object-position: 0 5%;
+    height: 700px;
+}
+
+.card-posicao-img {
+    object-fit: cover;
+    height: 200px;
+
+}
+
+.card-largura {
+    max-width: 18rem!important;
+}
