@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj": {}
+    "C:\\Projetos\\PUC\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj": {
+    "C:\\Projetos\\PUC\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj",
+        "projectUniqueName": "C:\\Projetos\\PUC\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj",
         "projectName": "PinguinoApp.API",
-        "projectPath": "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj",
-        "packagesPath": "C:\\Users\\jluiz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\obj\\",
+        "projectPath": "C:\\Projetos\\PUC\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj",
+        "packagesPath": "C:\\Users\\Vandre\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\PUC\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jluiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Vandre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,13 +48,13 @@
               "target": "Package",
               "version": "[5.0.9, )"
             },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.6.3, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.2, )"
+              "version": "[6.2.1, )"
             }
           },
           "imports": [
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

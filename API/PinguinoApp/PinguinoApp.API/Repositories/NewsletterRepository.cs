@@ -7,7 +7,7 @@ namespace PinguinoApp.API.Repositories
     {
         public async Task<bool> Subscription(Newsletter newsletter)
         {
-            return true;
+            string sql = @"INSERT INTO Newsletter (email, nome)VALUES(@email, @nome);";
         }
 
         public async Task<bool> Unsubscription(Newsletter newsletter)

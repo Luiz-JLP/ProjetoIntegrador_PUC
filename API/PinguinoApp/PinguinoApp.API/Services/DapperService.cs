@@ -1,21 +1,19 @@
 ﻿using Dapper;
-using System;
+using Npgsql;
+using PinguinoApp.API.Interface;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Threading.Tasks;
-using PinguinoApp.API.Interface;
 
 namespace PinguinoApp.API.Services
 {
     public class DapperService : IDapperService
     {
-        protected readonly SqlConnection _db;
+        protected readonly NpgsqlConnection _db;
 
         public DapperService(IDatabaseSettings databaseSettings)
         {
-            _db = new SqlConnection(databaseSettings.ConnectionString);
+            _db = new NpgsqlConnection(databaseSettings.ConnectionString);
             _db.Open();
         }
 
