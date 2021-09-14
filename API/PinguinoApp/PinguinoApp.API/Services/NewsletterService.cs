@@ -24,7 +24,7 @@ namespace PinguinoApp.API.Services
 
         public async Task<ActionResult<dynamic>> ListAll(Newsletter newsletter)
         {
-            return await repository. (newsletter);
+            return null; // await repository. (newsletter);
         }
     }
 }

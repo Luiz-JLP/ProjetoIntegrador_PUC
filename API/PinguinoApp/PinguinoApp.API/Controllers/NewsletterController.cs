@@ -19,14 +19,12 @@ namespace PinguinoApp.API.Controllers
         }
 
         [HttpPost("subscription")]
-        [Authorize]
         public async Task<ActionResult<dynamic>> Subscription([FromBody] Newsletter newsletter)
         {
             return Ok(await service.Subscription(newsletter));
         }
 
         [HttpPost("unsubscription")]
-        [Authorize]
         public async Task<ActionResult<dynamic>> Unsubscription([FromBody] Newsletter newsletter)
         {
             return Ok(await service.Unsubscription(newsletter));
@@ -35,8 +33,8 @@ namespace PinguinoApp.API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Newsletter>>> SelectAll([FromQuery] Newsletter newsletter)
         {
-            var usuarios = await service.
-            return Ok(usuarios);
+            //var usuarios = await service.ListAll
+            return null; // Ok(usuarios);
         }
     }
 }

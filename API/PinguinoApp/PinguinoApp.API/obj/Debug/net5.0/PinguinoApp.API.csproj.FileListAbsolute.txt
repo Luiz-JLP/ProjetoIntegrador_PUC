@@ -18,14 +18,7 @@ C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoAp
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\System.Data.SqlClient.dll
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
-C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
-C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
-C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.AssemblyInfoInputs.cache
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.AssemblyInfo.cs
@@ -79,3 +72,5 @@ C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\ref\PinguinoApp.API.dll
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.pdb
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.genruntimeconfig.cache
+C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Npgsql.dll
+C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache

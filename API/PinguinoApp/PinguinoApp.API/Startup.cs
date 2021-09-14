@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Npgsql;
 using PinguinoApp.API.Interface;
 using PinguinoApp.API.Models;
 using PinguinoApp.API.Repositories;
@@ -43,6 +44,8 @@ namespace PinguinoApp.API
 
             services.AddSingleton<IDapperService, DapperService>();
             services.AddSingleton<ITokenService, TokenService>();
+
+            services.AddSingleton<NpgsqlConnection>();
 
             services.AddControllers();
 
