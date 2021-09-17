@@ -56,7 +56,6 @@ C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.AssemblyInfoInputs.cache
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.AssemblyInfo.cs
@@ -74,3 +73,4 @@ C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.genruntimeconfig.cache
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Npgsql.dll
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache
+C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache
