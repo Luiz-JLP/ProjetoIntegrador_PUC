@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageBoxService } from 'src/app/services/message-box.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  codigo = 'Código Criado';
+
+  constructor(
+    private message: MessageBoxService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  save(): void {
+    this.message.show(this.codigo);
   }
 
 }

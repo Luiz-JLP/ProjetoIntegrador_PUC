@@ -1,1 +1,25 @@
-<p>login works!</p>
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title class="title">        
+        <a>Login</a>
+        <hr>
+    </mat-card-title> 
+
+    <form class="form">
+
+      <div>
+          <mat-form-field class="width-50" >
+            <mat-label>Código</mat-label>
+            <input matInput [(ngModel)]="codigo" name="codigo" >
+          </mat-form-field>
+      </div>
+
+    </form>
+
+    <button mat-raised-button class="button" color="primary" (click)="save()" >
+      Salvar
+    </button>
+    <button mat-raised-button class="button">
+      Cancelar
+    </button>  
+
+</mat-card>
