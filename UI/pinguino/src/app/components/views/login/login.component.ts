@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Login } from 'src/app/models/login';
+import { LoginService } from 'src/app/services/login.service';
 import { MessageBoxService } from 'src/app/services/message-box.service';
 
 @Component({
@@ -8,17 +11,23 @@ import { MessageBoxService } from 'src/app/services/message-box.service';
 })
 export class LoginComponent implements OnInit {
 
-  codigo = 'Código Criado';
+  login: Login = { login: '', senha: ''};
 
   constructor(
-    private message: MessageBoxService
+    private message: MessageBoxService,
+    private service: LoginService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
   save(): void {
-    this.message.show(this.codigo);
+    this.service.save(this.login).subscribe(
+      retorno => {  }
+    )
   }
+
+  // this.router.navigate("/");
 
 }
