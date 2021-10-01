@@ -1,3 +1,4 @@
+import { LogadoSucesso } from './../../../models/logado-sucesso';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/models/login';
@@ -11,7 +12,7 @@ import { MessageBoxService } from 'src/app/services/message-box.service';
 })
 export class LoginComponent implements OnInit {
 
-  login: Login = { login: '', senha: ''};
+  login: Login = { userName: '', password: '' };
 
   constructor(
     private message: MessageBoxService,
@@ -22,10 +23,25 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  save(): void {
-    this.service.save(this.login).subscribe(
-      retorno => {  }
+  logar(): void {
+
+    console.log("logando")
+
+    this.service.logar(this.login).subscribe(
+      retorno => {
+        
+        console.log(retorno);
+        this.router.navigateByUrl('/');
+
+      }, (error) => {
+        this.message.show(error.error);         
+      }
+
     )
+  }
+
+  cancelar(): void {
+    this.router.navigateByUrl("/");
   }
 
   // this.router.navigate("/");

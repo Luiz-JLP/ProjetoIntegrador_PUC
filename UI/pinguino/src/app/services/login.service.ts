@@ -1,14 +1,18 @@
+import { UsuarioService } from './usuario/usuario.service';
 import { Login } from 'src/app/models/login';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { LogadoSucesso } from 'src/app/models/logado-sucesso';
+
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import {tap} from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  baseUrl = "";
+  baseUrl = "https://app-pinguino.herokuapp.com/v1/account/login";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -17,10 +21,18 @@ export class LoginService {
   };
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private usuarioService: UsuarioService
   ) { }
 
-  save(login: Login): Observable<string> {
-    return this.http.post<string>(this.baseUrl, login, this.httpOptions );
+  logar(login: Login): Observable<HttpResponse<any>> {
+    return this.http.post(this.baseUrl, login, 
+      {observe: 'response'}).pipe(
+        tap((res) => {
+          const authToken = res.headers.get('x-access-token') ?? '';
+          this.usuarioService.salvaToken(authToken);
+        })
+        );
   }
+ 
 }
