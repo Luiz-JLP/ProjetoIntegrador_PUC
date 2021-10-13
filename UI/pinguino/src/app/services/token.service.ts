@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
-const KEY = 'token'  
+const KEY = 'token' 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,6 @@ export class TokenService {
 
   salvaToken(token : string){
     localStorage.setItem(KEY, token);
-
   }
 
   excluiToken(){

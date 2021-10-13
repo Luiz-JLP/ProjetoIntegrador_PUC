@@ -22,7 +22,7 @@ export class UsuarioService {
     this.usuarioSubject.next(usuario);
   }
 
-  retornaUsuari(){
+  retornaUsuario(){
     return this.usuarioSubject.asObservable();
   }
 

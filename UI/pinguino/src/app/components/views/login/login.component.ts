@@ -26,15 +26,17 @@ export class LoginComponent implements OnInit {
   logar(): void {
 
     console.log("logando")
-
+    console.log(this.login)
+    
     this.service.logar(this.login).subscribe(
       retorno => {
-        
+
         console.log(retorno);
         this.router.navigateByUrl('/');
 
       }, (error) => {
-        this.message.show(error.error);         
+        console.log(error);
+        this.message.show(error.error);
       }
 
     )
@@ -43,7 +45,4 @@ export class LoginComponent implements OnInit {
   cancelar(): void {
     this.router.navigateByUrl("/");
   }
-
-  // this.router.navigate("/");
-
 }
