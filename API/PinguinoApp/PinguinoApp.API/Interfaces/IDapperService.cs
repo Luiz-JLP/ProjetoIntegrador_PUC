@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PinguinoApp.API.Interface
+namespace PinguinoApp.API.Interfaces
 {
     public interface IDapperService
     {

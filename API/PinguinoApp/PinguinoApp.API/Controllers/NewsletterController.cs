@@ -31,7 +31,7 @@ namespace PinguinoApp.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Newsletter>>> SelectAll([FromQuery] Newsletter newsletter)
+        public Task<ActionResult<List<Newsletter>>> SelectAll([FromQuery] Newsletter newsletter)
         {
             //var usuarios = await service.ListAll
             return null; // Ok(usuarios);

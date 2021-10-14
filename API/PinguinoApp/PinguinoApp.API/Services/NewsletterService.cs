@@ -22,7 +22,7 @@ namespace PinguinoApp.API.Services
             return await repository.Unsubscription(newsletter);
         }
 
-        public async Task<ActionResult<dynamic>> ListAll(Newsletter newsletter)
+        public Task<ActionResult<dynamic>> ListAll(Newsletter newsletter)
         {
             return null; // await repository. (newsletter);
         }

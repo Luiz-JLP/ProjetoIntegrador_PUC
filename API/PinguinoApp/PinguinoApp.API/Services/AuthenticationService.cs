@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using PinguinoApp.API.Interface;
+using PinguinoApp.API.Interfaces;
 using PinguinoApp.API.Models;
 using PinguinoApp.API.Repositories;
+using PinguinoApp.API.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PinguinoApp.API.Services
 {
@@ -17,19 +21,27 @@ namespace PinguinoApp.API.Services
 
         public async Task<ActionResult<dynamic>> Login(Login login)
         {
-            User user = UsersRepository.GetUser(login.UserName);
-
-            if (user == null)
-                return NotFound("Usuário ou Senha Inválidos");
-
-            if (string.Equals(login.Password, user.Password))
+            try
             {
-                return Ok(tokenService.GenerateToken(user));
+                User user = UsersRepository.GetUser(login.UserName);
+
+                if (user == null)
+                    return NotFound("Usuário ou Senha Inválidos");
+
+                if (string.Equals(login.Password, user.Password))
+                {
+                    return Ok(await tokenService.GenerateToken(user));
+                }
+                else
+                {
+                    return Unauthorized("Usuário ou Senha Inválidos");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return Unauthorized("Usuário ou Senha Inválidos");
+                return BadRequest(ex.Message);
             }
+            
         }
     }
 }

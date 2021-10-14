@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using PinguinoApp.API.Interface;
+using PinguinoApp.API.Interfaces;
 using PinguinoApp.API.Models;
 using System;
 using System.IdentityModel.Tokens.Jwt;

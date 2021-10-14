@@ -1,4 +1,4 @@
-﻿using PinguinoApp.API.Interface;
+﻿using PinguinoApp.API.Interfaces;
 
 namespace PinguinoApp.API.Models
 {

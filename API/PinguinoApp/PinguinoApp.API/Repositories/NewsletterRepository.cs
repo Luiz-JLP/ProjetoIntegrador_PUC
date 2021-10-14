@@ -1,4 +1,4 @@
-﻿using PinguinoApp.API.Interface;
+﻿using PinguinoApp.API.Interfaces;
 using PinguinoApp.API.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -16,13 +16,14 @@ namespace PinguinoApp.API.Repositories
 
         public async Task<int> Subscription(Newsletter newsletter)
         {
-            string sql = @"INSERT INTO Newsletter ( email, nome )VALUES( @email, @nome );";
+            string sql = @"INSERT INTO Newsletter ( email, nome  )VALUES( @email, @nome );";
             return await service.ScalarAsync<int>(sql, parameters: new { @email = newsletter.Email, @nome = newsletter.Nome });
         }
 
         public async Task<bool> Unsubscription(Newsletter newsletter)
         {
-            return true;
+            string sql = @"DELETE FROM Newsletter WHERE email = @email AND nome = @nome );";
+            return await service.ScalarAsync<bool>(sql, parameters: new { @email = newsletter.Email, @nome = newsletter.Nome });
         }
 
         public async Task<IEnumerable<Newsletter>> Get()

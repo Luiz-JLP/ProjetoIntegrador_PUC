@@ -1,4 +1,4 @@
-﻿namespace PinguinoApp.API.Interface
+﻿namespace PinguinoApp.API.Interfaces
 {
     public interface IDatabaseSettings
     {

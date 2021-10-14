@@ -8,7 +8,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Npgsql;
-using PinguinoApp.API.Interface;
+using PinguinoApp.API.Interfaces;
 using PinguinoApp.API.Models;
 using PinguinoApp.API.Repositories;
 using PinguinoApp.API.Services;
@@ -39,8 +39,16 @@ namespace PinguinoApp.API
 
             services.AddSingleton<AuthenticationService>();
             services.AddSingleton<NewsletterService>();
+            services.AddSingleton<EstadosService>();
+            services.AddSingleton<FornecedoresService>();
+            services.AddSingleton<MunicipiosService>();
+            services.AddSingleton<PaisesService>();
 
             services.AddSingleton<NewsletterRepository>();
+            services.AddSingleton<EstadosRepository>();
+            services.AddSingleton<FornecedoresRepository>();
+            services.AddSingleton<MunicipiosRepository>();
+            services.AddSingleton<PaisesRepository>();
 
             services.AddSingleton<IDapperService, DapperService>();
             services.AddSingleton<ITokenService, TokenService>();
