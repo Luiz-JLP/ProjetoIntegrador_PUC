@@ -74,3 +74,4 @@ C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Npgsql.dll
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache
+C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Newtonsoft.Json.dll

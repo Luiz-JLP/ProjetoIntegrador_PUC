@@ -1,4 +1,7 @@
-﻿namespace PinguinoApp.API.Models
+﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+
+namespace PinguinoApp.API.Models
 {
     public class Pais
     {

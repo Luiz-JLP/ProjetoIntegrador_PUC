@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mjloQWQUNoslC1R6HaHbX1CKu8mMhH2zB84lfJjQFqT7wjTk8iDXFg6N8vysT2p0udMV2urZryyaRATsb+tVHA==",
+  "dgSpecHash": "bKmEKzYuGme904gojH8xgzltm2ZfkzOXZ4s+jGY/bTWC4cOQFwmQCj9ptR3QJk0TwniYKcJX36CsBHOYSs/DQQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\jluiz\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.7.1\\microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
     "C:\\Users\\jluiz\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\jluiz\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
+    "C:\\Users\\jluiz\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\jluiz\\.nuget\\packages\\npgsql\\5.0.7\\npgsql.5.0.7.nupkg.sha512",
     "C:\\Users\\jluiz\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.1\\swashbuckle.aspnetcore.6.2.1.nupkg.sha512",
     "C:\\Users\\jluiz\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.1\\swashbuckle.aspnetcore.swagger.6.2.1.nupkg.sha512",

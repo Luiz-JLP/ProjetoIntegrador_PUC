@@ -22,13 +22,13 @@ namespace PinguinoApp.API.Repositories
 
         public async Task<IEnumerable<Pais>> Get()
         {
-            string command = @"SELECT id, descricao, codigo_area, ativo FROM public.paises;";
+            string command = @"SELECT id, descricao, codigo_area as CodigoArea, ativo FROM public.paises;";
             return await service.ListAsync<Pais>(command);
         }
 
         public async Task<Pais> Get(int id)
         {
-            string command = @"SELECT id, descricao, codigo_area, ativo FROM public.paises WHERE id = @id;";
+            string command = @"SELECT id, descricao, codigo_area as CodigoArea, ativo FROM public.paises WHERE id = @id;";
             return await service.SingleAsync<Pais>(command, parameters: new { @id = id });
         }
 

@@ -43,12 +43,14 @@ namespace PinguinoApp.API
             services.AddSingleton<FornecedoresService>();
             services.AddSingleton<MunicipiosService>();
             services.AddSingleton<PaisesService>();
+            services.AddSingleton<EnderecosService>();
 
             services.AddSingleton<NewsletterRepository>();
             services.AddSingleton<EstadosRepository>();
             services.AddSingleton<FornecedoresRepository>();
             services.AddSingleton<MunicipiosRepository>();
             services.AddSingleton<PaisesRepository>();
+            services.AddSingleton<EnderecosRepository>();
 
             services.AddSingleton<IDapperService, DapperService>();
             services.AddSingleton<ITokenService, TokenService>();
