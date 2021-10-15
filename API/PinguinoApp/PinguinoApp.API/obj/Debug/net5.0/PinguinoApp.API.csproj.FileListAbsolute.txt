@@ -75,3 +75,4 @@ C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoAp
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Debug\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache
 C:\Users\jluiz\source\repos\Git\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Debug\net5.0\Newtonsoft.Json.dll
