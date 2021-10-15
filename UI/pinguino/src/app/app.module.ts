@@ -26,6 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './components/template/menu/menu.component';
 import { LoginComponent } from './components/views/login/login.component';
 import { HomeComponent } from './components/views/home/home.component';
+import { PaisesViewComponent } from './components/paises/paises-view/paises-view.component';
+import { PaisesCreateComponent } from './components/paises/paises-create/paises-create.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { HomeComponent } from './components/views/home/home.component';
     FooterComponent,
     MenuComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    PaisesViewComponent,
+    PaisesCreateComponent
   ],
   imports: [
     BrowserModule,

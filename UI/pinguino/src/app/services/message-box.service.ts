@@ -10,11 +10,12 @@ export class MessageBoxService {
     private snackBar: MatSnackBar
   ) { }
 
-  show(message: string): void {
+  show(message: string, is_error: boolean = false): void {
     this.snackBar.open(message, 'X', {
-      duration: 5000,
+      duration: 3000,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom'
-    });
+      verticalPosition: 'bottom',
+      panelClass: is_error ? ['msg-error'] : ['msg-success']
+    })
   }
 }

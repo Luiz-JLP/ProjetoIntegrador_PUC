@@ -30,7 +30,7 @@ namespace PinguinoApp.API.Services
 
                 if (string.Equals(login.Password, user.Password))
                 {
-                    return Ok(await tokenService.GenerateToken(user));
+                    return Ok(tokenService.GenerateToken(user));
                 }
                 else
                 {

@@ -1,4 +1,4 @@
-import { UsuarioService } from './usuario/usuario.service';
+import { UsuarioService } from './usuario.service';
 import { LogadoSucesso } from 'src/app/models/logado-sucesso';
 import { Login } from 'src/app/models/login';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';

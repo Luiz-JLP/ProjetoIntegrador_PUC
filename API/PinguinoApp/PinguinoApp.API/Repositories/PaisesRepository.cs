@@ -22,7 +22,7 @@ namespace PinguinoApp.API.Repositories
 
         public async Task<IEnumerable<Pais>> Get()
         {
-            string command = @"SELECT id, descricao, codigo_area as CodigoArea, ativo FROM public.paises;";
+            string command = @"SELECT id, descricao, codigo_area as CodigoArea, ativo FROM public.paises ORDER BY id;";
             return await service.ListAsync<Pais>(command);
         }
 
