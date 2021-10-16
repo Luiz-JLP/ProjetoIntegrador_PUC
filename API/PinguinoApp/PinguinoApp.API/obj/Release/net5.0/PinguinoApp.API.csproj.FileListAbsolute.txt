@@ -35,4 +35,5 @@ C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Releas
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Release\net5.0\ref\PinguinoApp.API.dll
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Release\net5.0\PinguinoApp.API.pdb
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Release\net5.0\PinguinoApp.API.genruntimeconfig.cache
+C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\bin\Release\net5.0\Newtonsoft.Json.dll
 C:\Projetos\PUC\ProjetoIntegrador_PUC\API\PinguinoApp\PinguinoApp.API\obj\Release\net5.0\PinguinoApp.API.csproj.AssemblyReference.cache
