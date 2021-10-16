@@ -1,4 +1,4 @@
-export class Enderecos {
+export class Endereco {
 
     constructor() { 
         this.id = 0;

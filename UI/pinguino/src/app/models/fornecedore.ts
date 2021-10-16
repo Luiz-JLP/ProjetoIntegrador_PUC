@@ -1,4 +1,4 @@
-export class Fornecedores {
+export class Fornecedor {
 
     constructor() { 
         this.id = 0;

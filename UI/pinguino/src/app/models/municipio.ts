@@ -1,4 +1,4 @@
-export class Municipios {
+export class Municipio {
 
     constructor() { 
         this.id = 0;
