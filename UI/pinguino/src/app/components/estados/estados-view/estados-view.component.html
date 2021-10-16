@@ -22,7 +22,9 @@
             <td>{{row.paisNome}}</td>
             <td>{{row.descricao}}</td>
             <td>{{row.sigla}}</td>
-            <td>{{row.ativo}}</td>
+            <td>
+                <mat-checkbox [checked]="row.ativo" disabled></mat-checkbox>
+            </td>
             <td>
               <a class="edit-button" routerLink="/estados/update/{{row.id}}">
                 <i class="material-icons"> edit </i>
