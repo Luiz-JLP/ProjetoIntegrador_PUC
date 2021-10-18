@@ -28,6 +28,19 @@ import { LoginComponent } from './components/views/login/login.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { PaisesViewComponent } from './components/paises/paises-view/paises-view.component';
 import { PaisesCreateComponent } from './components/paises/paises-create/paises-create.component';
+import { PaisesDeleteComponent } from './components/paises/paises-delete/paises-delete.component';
+import { EstadosViewComponent } from './components/estados/estados-view/estados-view.component';
+import { EstadosCreateComponent } from './components/estados/estados-create/estados-create.component';
+import { EstadosDeleteComponent } from './components/estados/estados-delete/estados-delete.component';
+import { MunicipiosViewComponent } from './components/municipios/municipios-view/municipios-view.component';
+import { MunicipiosCreateComponent } from './components/municipios/municipios-create/municipios-create.component';
+import { MunicipiosDeleteComponent } from './components/municipios/municipios-delete/municipios-delete.component';
+import { EnderecosViewComponent } from './components/enderecos/enderecos-view/enderecos-view.component';
+import { EnderecosCreateComponent } from './components/enderecos/enderecos-create/enderecos-create.component';
+import { EnderecosDeleteComponent } from './components/enderecos/enderecos-delete/enderecos-delete.component';
+import { FornecedoresViewComponent } from './components/fornecedores/fornecedores-view/fornecedores-view.component';
+import { FornecedoresCreateComponent } from './components/fornecedores/fornecedores-create/fornecedores-create.component';
+import { FornecedoresDeleteComponent } from './components/fornecedores/fornecedores-delete/fornecedores-delete.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +52,20 @@ import { PaisesCreateComponent } from './components/paises/paises-create/paises-
     LoginComponent,
     HomeComponent,
     PaisesViewComponent,
-    PaisesCreateComponent
+    PaisesCreateComponent,
+    PaisesDeleteComponent,
+    EstadosViewComponent,
+    EstadosCreateComponent,
+    EstadosDeleteComponent,
+    MunicipiosViewComponent,
+    MunicipiosCreateComponent,
+    MunicipiosDeleteComponent,
+    EnderecosViewComponent,
+    EnderecosCreateComponent,
+    EnderecosDeleteComponent,
+    FornecedoresViewComponent,
+    FornecedoresCreateComponent,
+    FornecedoresDeleteComponent
   ],
   imports: [
     BrowserModule,
