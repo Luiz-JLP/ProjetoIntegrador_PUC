@@ -34,17 +34,17 @@ namespace PinguinoApp.API.Repositories
 
         public async Task<bool> Insert(Municipio entity)
         {
-            string command = @"INSERT INTO municipios ( estado, descricao ) VALUES ( @estado, @descricao );";
-            return await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @estado = entity.Estado });
+            string command = @"INSERT INTO municipios ( estado, descricao, ativo ) VALUES ( @estado, @descricao, @ativo );";
+            return await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @estado = entity.Estado, @ativo = entity.Ativo });
         }
 
         public async Task<bool> Insert(IEnumerable<Municipio> entities)
         {
-            string command = @"INSERT INTO municipios ( estado, descricao ) VALUES ( @estado, @descricao );";
+            string command = @"INSERT INTO municipios ( estado, descricao, ativo ) VALUES ( @estado, @descricao, @ativo );";
 
             foreach (var entity in entities)
             {
-                await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @estado = entity.Estado });
+                await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @estado = entity.Estado, @ativo = entity.Ativo });
             }
 
             return true;
