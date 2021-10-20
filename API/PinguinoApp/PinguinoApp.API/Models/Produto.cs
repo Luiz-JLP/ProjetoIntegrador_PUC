@@ -12,6 +12,10 @@ namespace PinguinoApp.API.Models
         public string Sku { get; set; }
         public string Codigobarras { get; set; }
         public Fornecedor Fornecedor { get; set; }
+        public string Descricao { get; set; }
+        public decimal PrecoVenda { get; set; }
+        public bool Ativo { get; set; }
+
 
     }
 }

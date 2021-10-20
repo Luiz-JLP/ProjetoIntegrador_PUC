@@ -44,6 +44,7 @@ namespace PinguinoApp.API
             services.AddSingleton<MunicipiosService>();
             services.AddSingleton<PaisesService>();
             services.AddSingleton<EnderecosService>();
+            services.AddSingleton<ProdutosService>();
 
             services.AddSingleton<NewsletterRepository>();
             services.AddSingleton<EstadosRepository>();
@@ -51,6 +52,7 @@ namespace PinguinoApp.API
             services.AddSingleton<MunicipiosRepository>();
             services.AddSingleton<PaisesRepository>();
             services.AddSingleton<EnderecosRepository>();
+            services.AddSingleton<ProdutosRepository>();
 
             services.AddSingleton<IDapperService, DapperService>();
             services.AddSingleton<ITokenService, TokenService>();

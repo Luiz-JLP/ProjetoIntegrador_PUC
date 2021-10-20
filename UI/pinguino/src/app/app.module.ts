@@ -41,6 +41,9 @@ import { EnderecosDeleteComponent } from './components/enderecos/enderecos-delet
 import { FornecedoresViewComponent } from './components/fornecedores/fornecedores-view/fornecedores-view.component';
 import { FornecedoresCreateComponent } from './components/fornecedores/fornecedores-create/fornecedores-create.component';
 import { FornecedoresDeleteComponent } from './components/fornecedores/fornecedores-delete/fornecedores-delete.component';
+import { ProdutosCreateComponent } from './components/produtos/produtos-create/produtos-create.component';
+import { ProdutosDeleteComponent } from './components/produtos/produtos-delete/produtos-delete.component';
+import { ProdutosViewComponent } from './components/produtos/produtos-view/produtos-view.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,10 @@ import { FornecedoresDeleteComponent } from './components/fornecedores/fornecedo
     EnderecosDeleteComponent,
     FornecedoresViewComponent,
     FornecedoresCreateComponent,
-    FornecedoresDeleteComponent
+    FornecedoresDeleteComponent,
+    ProdutosCreateComponent,
+    ProdutosDeleteComponent,
+    ProdutosViewComponent
   ],
   imports: [
     BrowserModule,

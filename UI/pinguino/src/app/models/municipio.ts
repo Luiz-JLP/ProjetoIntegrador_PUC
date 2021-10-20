@@ -1,5 +1,3 @@
-import { Estado } from 'src/app/models/estado';
-
 export class Municipio {
 
     constructor() { 
