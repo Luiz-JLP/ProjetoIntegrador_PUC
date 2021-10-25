@@ -23,7 +23,10 @@ namespace PinguinoApp.API.Repositories
 
         public async Task<IEnumerable<Endereco>> Get()
         {
-            string command = @"SELECT id, logradouro, numero, complemento, municipio, cep, ativo FROM public.enderecos;";
+            string command = @"SELECT id, logradouro, numero, complemento, municipio, cep, ativo FROM public.enderecos ";
+
+            var tmp = await service.ListAsync<Endereco>(command);
+
             return await service.ListAsync<Endereco>(command);
         }
 

@@ -15,7 +15,7 @@ namespace PinguinoApp.API.Services
         public DapperService(NpgsqlConnection db, IDatabaseSettings databaseSettings)
         {
             this.databaseSettings = databaseSettings;
-            this._db = db;
+            _db = db;
 
             _db.ConnectionString = this.databaseSettings.ConnectionString;
             _db.Open();
