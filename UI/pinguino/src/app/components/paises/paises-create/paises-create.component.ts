@@ -28,12 +28,12 @@ export class PaisesCreateComponent implements OnInit {
     if ( id != null ) 
     { 
       this.isUpdate = true;
-      this.get(id); 
+      this.get(parseInt(id)); 
       this.title = "Editar País";
     }
   }
 
-  get(id: string): void {
+  get(id: number): void {
     this.service.getOne(id).subscribe(
       result => { this.pais = result; }
     )

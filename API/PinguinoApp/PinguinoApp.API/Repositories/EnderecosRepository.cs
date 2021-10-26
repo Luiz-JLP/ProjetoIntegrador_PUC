@@ -18,12 +18,13 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Delete(int id)
         {
             string command = @"UPDATE public.enderecos SET ativo = '0' WHERE id = @id;";
-            return await service.ScalarAsync<bool>(command, parameters: new { @id = id });
+            await service.ScalarAsync<bool>(command, parameters: new { @id = id });
+            return true;
         }
 
         public async Task<IEnumerable<Endereco>> Get()
         {
-            string command = @"SELECT id, logradouro, numero, complemento, municipio, cep, ativo FROM public.enderecos;";
+            string command = @"SELECT id, logradouro, numero, complemento, municipio, cep, ativo FROM public.enderecos WHERE ativo = true;";
             return await service.ListAsync<Endereco>(command);
         }
 
@@ -36,7 +37,7 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Insert(Endereco entity)
         {
             string command = @"INSERT INTO enderecos ( logradouro, numero, complemento, municipio, cep ) VALUES ( @logradouro, @numero, @complemento, @municipio, @cep );";
-            return await service.ScalarAsync<bool>(command, parameters: new 
+            await service.ScalarAsync<bool>(command, parameters: new 
             { 
                 @logradouro = entity.Logradouro, 
                 @numero = entity.Numero, 
@@ -44,6 +45,7 @@ namespace PinguinoApp.API.Repositories
                 @municipio = entity.Municipio, 
                 @cep = entity.Cep
             });
+            return true;
         }
 
         public async Task<bool> Insert(IEnumerable<Endereco> entities)
@@ -68,14 +70,16 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Update(Endereco entity)
         {
             string command = @"UPDATE public.enderecos SET logradouro = @logradouro, numero = @numero, complemento = @complemento, municipio = @municipio, cep = @cep WHERE id = @id;";
-            return await service.ScalarAsync<bool>(command, parameters: new
+            await service.ScalarAsync<bool>(command, parameters: new
             {
                 @logradouro = entity.Logradouro,
                 @numero = entity.Numero,
                 @complemento = entity.Complemento,
                 @municipio = entity.Municipio,
                 @cep = entity.Cep, 
-                @id = entity.Id });
+                @id = entity.Id 
+            });
+            return true;
         }
     }
 }
