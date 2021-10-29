@@ -2,11 +2,20 @@ export class Fornecedor {
 
     constructor() { 
         this.id = 0;
-        this.descricao = '';
+        this.nome = '';
+        this.cnpjCpf = '';
+        this.email = '';
+        this.endereco = 0;
+        this.enderecoLogradouro = '';
         this.ativo = true;
+  
     }
 
     id: number;
-    descricao: string;
+    nome: string;
+    cnpjCpf: string;
+    email: string;
+    endereco: number;
+    enderecoLogradouro: string;
     ativo: boolean;
 }
