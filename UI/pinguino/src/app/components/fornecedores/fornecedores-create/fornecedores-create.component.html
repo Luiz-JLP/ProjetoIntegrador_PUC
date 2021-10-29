@@ -1,1 +1,55 @@
-<p>fornecedores-create works!</p>
+<mat-card class="container-fluid mat-elevation-z3">
+    <mat-card-title class="title">
+        <a>{{title}}</a>
+        <hr>
+    </mat-card-title>
+
+    <form class="form">
+        <div>
+            <mat-form-field class="width-25">
+                <mat-label>Id</mat-label>
+                <input matInput disabled [(ngModel)]="fornecedor.id" name="id">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="width-50">
+                <mat-label>Nome</mat-label>
+                <input matInput [(ngModel)]="fornecedor.nome" name="nome">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="width-50">
+                <mat-label>CNPJ</mat-label>
+                <input matInput [(ngModel)]="fornecedor.cnpjCpf" name="cnpjCpf">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="width-50">
+                <mat-label>E-mail</mat-label>
+                <input matInput [(ngModel)]="fornecedor.email" name="email">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="width-25">
+                <mat-label>Endereco</mat-label>
+                <mat-select [(value)]="fornecedor.endereco">
+                  <mat-option *ngFor="let endereco of enderecos" [value]="endereco.id">
+                    {{endereco.logradouro}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    </form>
+
+    <div>
+        <hr>
+        <button class="btn btn-primary" mat-raised-button color="primary" (click)="save()">
+            Salvar
+        </button>
+        <button class="btn" mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </div>
+
+</mat-card>
