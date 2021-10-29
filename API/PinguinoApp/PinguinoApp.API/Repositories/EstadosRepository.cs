@@ -17,12 +17,13 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Delete(int id)
         {
             string command = @"UPDATE public.estados SET ativo = '0' WHERE id = @id;";
-            return await service.ScalarAsync<bool>(command, parameters: new { @id = id });
+            await service.ScalarAsync<bool>(command, parameters: new { @id = id });
+            return true;
         }
 
         public async Task<IEnumerable<Estado>> Get()
         {
-            string command = @"SELECT id, pais, descricao, sigla, ativo FROM public.estados;";
+            string command = @"SELECT id, pais, descricao, sigla, ativo FROM public.estados WHERE ativo = true;";
             return await service.ListAsync<Estado>(command);
         }
 
@@ -35,7 +36,8 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Insert(Estado entity)
         {
             string command = @"INSERT INTO estados ( pais, descricao, sigla ) VALUES ( @pais, @descricao, @sigla );";
-            return await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @pais = entity.Pais, @sigla = entity.Sigla });
+            await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @pais = entity.Pais, @sigla = entity.Sigla });
+            return true;
         }
 
         public async Task<bool> Insert(IEnumerable<Estado> entities)
@@ -53,7 +55,8 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Update(Estado entity)
         {
             string command = @"UPDATE public.estados SET pais = @pais, descricao = @descricao, sigla = @sigla WHERE id = @id;";
-            return await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @pais = entity.Pais, @sigla = entity.Sigla, @id = entity.Id });
+            await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @pais = entity.Pais, @sigla = entity.Sigla, @id = entity.Id });
+            return true;
         }
     }
 }

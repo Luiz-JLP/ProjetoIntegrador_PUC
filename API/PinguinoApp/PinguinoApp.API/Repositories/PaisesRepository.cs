@@ -17,12 +17,13 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Delete(int id)
         {
             string command = @"UPDATE public.paises SET ativo = '0' WHERE id = @id;";
-            return await service.ScalarAsync<bool>(command, parameters: new { @id = id });
+            await service.ScalarAsync<bool>(command, parameters: new { @id = id });
+            return true;
         }
 
         public async Task<IEnumerable<Pais>> Get()
         {
-            string command = @"SELECT id, descricao, codigo_area as CodigoArea, ativo FROM public.paises ORDER BY id;";
+            string command = @"SELECT id, descricao, codigo_area as CodigoArea, ativo FROM public.paises WHERE ativo = true ORDER BY id;";
             return await service.ListAsync<Pais>(command);
         }
 
@@ -35,7 +36,8 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Insert(Pais entity)
         {
             string command = @"INSERT INTO paises ( descricao, codigo_area ) VALUES ( @descricao, @codigo_area );";
-            return await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @codigo_area = entity.CodigoArea });            
+            await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @codigo_area = entity.CodigoArea });
+            return true;
         }
 
         public async Task<bool> Insert(IEnumerable<Pais> entities)
@@ -53,7 +55,8 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Update(Pais entity)
         {
             string command = @"UPDATE public.paises SET descricao = @descricao, codigo_area = @codigo_area WHERE id = @id;";
-            return await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @codigo_area = entity.CodigoArea, @id = entity.Id });
+            await service.ScalarAsync<bool>(command, parameters: new { @descricao = entity.Descricao, @codigo_area = entity.CodigoArea, @id = entity.Id });
+            return true;
         }
     }
 }

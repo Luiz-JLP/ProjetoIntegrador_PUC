@@ -30,7 +30,7 @@ export class PaisesService {
     );
   }
 
-  getOne(id: string): Observable<Pais> {
+  getOne(id: number): Observable<Pais> {
     return this.http.get<Pais>(`${this.baseUrl}/one?id=${id}`).pipe(
       map((obj) => obj),
       catchError((e) => this.error.handler(e))
@@ -46,6 +46,13 @@ export class PaisesService {
 
   updateOne(pais: Pais): Observable<boolean> {
     return this.http.put<boolean>(this.baseUrl, pais, this.options).pipe(
+      map((obj) => obj),
+      catchError((e) => this.error.handler(e))
+    );
+  }
+
+  delete(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${this.baseUrl}?id=${id}`, this.options).pipe(
       map((obj) => obj),
       catchError((e) => this.error.handler(e))
     );

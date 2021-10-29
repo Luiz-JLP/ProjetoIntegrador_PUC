@@ -15,33 +15,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .edit-button> i {
-    color: #d9cd26;
+  color: #d9cd26;
 }
 
 .delete-button > i {
-    color: #e35e6b;
+  color: #e35e6b;
 }
 
-.width-100 {
-    width: 99%;
-    padding-right: 1%;
-  }
+.field {
+  width: 100%;
+}
+
+.primaryForm {
+  margin: 15px;
+}
   
-  .width-50 {
-    width: 49%;
-    padding-right: 1%;
-  }
+.mat-card .mat-card-footer {
+  margin: 15px;
+}
   
-  .width-75 {
-    width: 73%;
-    padding-right: 1%;
-  }
+.mat-card .mat-card-footer .buttons {
+  margin-right: 5px;
+}
   
-  .width-25 {
-    width: 24%;
-    padding-right: 1%;
-  }
+.mat-card .mat-card-title {    
+  margin: 15px;
+}
   
-  .title {
-    padding-bottom: 15px;
-  } 
+.img-thumbnail {
+  width: 50px;
+  height: 50px;
+}

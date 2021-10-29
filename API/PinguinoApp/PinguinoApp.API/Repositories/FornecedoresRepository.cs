@@ -17,12 +17,13 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Delete(int id)
         {
             string command = @"UPDATE public.fornecedores SET ativo = '0' WHERE id = @id;";
-            return await service.ScalarAsync<bool>(command, parameters: new { @id = id });
+            await service.ScalarAsync<bool>(command, parameters: new { @id = id });
+            return true;
         }
 
         public async Task<IEnumerable<Fornecedor>> Get()
         {
-            string command = @"SELECT id, nome, cnpjcpf, email, endereco, ativo FROM public.fornecedores;";
+            string command = @"SELECT id, nome, cnpjcpf, email, endereco, ativo FROM public.fornecedores WHERE ativo = true;";
             return await service.ListAsync<Fornecedor>(command);
         }
 
@@ -35,7 +36,8 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Insert(Fornecedor entity)
         {
             string command = @"INSERT INTO fornecedores ( nome, cnpjcpf, email, endereco ) VALUES ( @nome, @cnpjcpf, @email, @endereco );";
-            return await service.ScalarAsync<bool>(command, parameters: new { @nome = entity.Nome, @cnpjcpf = entity.CnpjCpf, @email = entity.Email, @endereco = entity.Endereco });
+            await service.ScalarAsync<bool>(command, parameters: new { @nome = entity.Nome, @cnpjcpf = entity.CnpjCpf, @email = entity.Email, @endereco = entity.Endereco });
+            return true;
         }
 
         public async Task<bool> Insert(IEnumerable<Fornecedor> entities)
@@ -53,7 +55,7 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Update(Fornecedor entity)
         {
             string command = @"UPDATE public.fornecedores SET nome = @nome, cnpjcpf = @cnpjcpf, email = @email, endereco = @endereco WHERE id = @id;";
-            return await service.ScalarAsync<bool>(
+            await service.ScalarAsync<bool>(
                 command, 
                 parameters: new 
                 { 
@@ -62,7 +64,10 @@ namespace PinguinoApp.API.Repositories
                     @email = entity.Email, 
                     @endereco = entity.Endereco, 
                     @id = entity.Id 
-                });
+                }
+           );
+
+            return true;
         }
     }
 }
