@@ -35,7 +35,7 @@ export class MunicipiosCreateComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     if (id != null) {
       this.isUpdate = true;
-      this.get(id);
+      this.get(parseInt(id)); 
       this.title = "Editar Município";
     }
   }
@@ -49,7 +49,7 @@ export class MunicipiosCreateComponent implements OnInit {
     )
   }
 
-  get(id: string): void {
+  get(id: number): void {
 
     this.estadosService.get().subscribe(
       result => {

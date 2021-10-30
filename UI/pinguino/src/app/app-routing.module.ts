@@ -17,6 +17,10 @@ import { PaisesDeleteComponent } from './components/paises/paises-delete/paises-
 import { PaisesViewComponent } from './components/paises/paises-view/paises-view.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { LoginComponent } from './components/views/login/login.component';
+import { ProdutosCreateComponent } from './components/produtos/produtos-create/produtos-create.component';
+import { ProdutosDeleteComponent } from './components/produtos/produtos-delete/produtos-delete.component';
+import { ProdutosViewComponent } from './components/produtos/produtos-view/produtos-view.component';
+
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -40,7 +44,11 @@ const routes: Routes = [
   { path: "fornecedores", component: FornecedoresViewComponent },
   { path: "fornecedores/create", component: FornecedoresCreateComponent },
   { path: "fornecedores/update/:id", component: FornecedoresCreateComponent },
-  { path: "fornecedores/delete/:id", component: FornecedoresDeleteComponent }
+  { path: "fornecedores/delete/:id", component: FornecedoresDeleteComponent },
+  { path: "produtos", component: ProdutosViewComponent },
+  { path: "produtos/create", component: ProdutosCreateComponent },
+  { path: "produtos/update/:id", component: ProdutosCreateComponent },
+  { path: "produtos/delete/:id", component: ProdutosDeleteComponent }
 ];
 
 @NgModule({

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Municipio } from '../models/municipio';
 import { ErrorHandlerService } from './error-handler.service';
- 
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class MunicipiosService {
 
   options = {
     headers: new HttpHeaders({
-      'Content-Type':  'application/json'
+      'Content-Type': 'application/json'
     })
   };
 
@@ -31,7 +31,7 @@ export class MunicipiosService {
     );
   }
 
-  getOne(id: string): Observable<Municipio> {
+  getOne(id: number): Observable<Municipio> {
     return this.http.get<Municipio>(`${this.baseUrl}/one?id=${id}`).pipe(
       map((obj) => obj),
       catchError((e) => this.error.handler(e))
@@ -40,7 +40,7 @@ export class MunicipiosService {
 
   createOne(municipio: Municipio): Observable<boolean> {
     municipio.ativo = true
-     return this.http.post<boolean>(`${this.baseUrl}/one` , municipio, this.options).pipe(
+    return this.http.post<boolean>(`${this.baseUrl}/one`, municipio, this.options).pipe(
       map((obj) => obj),
       catchError((e) => this.error.handler(e))
     );
@@ -53,5 +53,12 @@ export class MunicipiosService {
     );
   }
 
- 
+  delete(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${this.baseUrl}?id=${id}`, this.options).pipe(
+      map((obj) => obj),
+      catchError((e) => this.error.handler(e))
+    );
+  }
+
+
 }

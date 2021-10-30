@@ -1,1 +1,66 @@
-<p>produtos-create works!</p>
+<mat-card class="container-fluid mat-elevation-z3">
+    <mat-card-title class="title">
+        <a>{{title}}</a>
+        <hr>
+    </mat-card-title>
+
+    <form class="form">
+        <div>
+            <mat-form-field class="width-25">
+                <mat-label>Código</mat-label>
+                <input matInput disabled [(ngModel)]="produto.id" name="id">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="width-50">
+                <mat-label>Nome</mat-label>
+                <input matInput [(ngModel)]="produto.nome" name="nome">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="width-50">
+                <mat-label>SKU</mat-label>
+                <input matInput [(ngModel)]="produto.sku" name="sku">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="width-50">
+                <mat-label>Cód. Barras</mat-label>
+                <input matInput [(ngModel)]="produto.codigobarras" name="codigobarras">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="width-100">
+                <mat-label>Descricao</mat-label>
+                <input matInput [(ngModel)]="produto.descricao" name="descricao">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="width-25">
+                <mat-label>Fornecedor</mat-label>
+                <mat-select [(value)]="produto.fornecedor">
+                  <mat-option *ngFor="let fornecedor of fornecedores" [value]="fornecedor.id">
+                    {{fornecedor.nome}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="width-100">
+                <mat-label>Preço Venda</mat-label>
+                <input matInput [(ngModel)]="produto.precovenda" name="precovenda">
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div>
+        <hr>
+        <button class="btn btn-primary" mat-raised-button color="primary" (click)="save()">
+            Salvar
+        </button>
+        <button class="btn" mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </div>
+
+</mat-card>

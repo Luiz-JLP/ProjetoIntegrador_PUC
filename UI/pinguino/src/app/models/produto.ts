@@ -5,8 +5,8 @@ export class Produto {
         this.nome = '';
         this.sku = '';
         this.codigobarras = '';
-        this.fornecedor_id = 0;
-        this.fornecedor_nome = '';
+        this.fornecedor = 0;
+        this.fornecedorNome = '';
         this.descricao = ''
         this.precovenda = 0.0;
         this.ativo = true;
@@ -16,8 +16,8 @@ export class Produto {
     nome: string;
     sku: string;
     codigobarras: string;
-    fornecedor_id: number;
-    fornecedor_nome: string;
+    fornecedor: number;
+    fornecedorNome: string;
     descricao: string;
     precovenda : number
     ativo: boolean;

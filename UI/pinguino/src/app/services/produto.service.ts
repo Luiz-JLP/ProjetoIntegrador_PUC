@@ -30,7 +30,7 @@ export class ProdutoService {
     );
   }
 
-  getOne(id: string): Observable<Produto> {
+  getOne(id: number): Observable<Produto> {
     return this.http.get<Produto>(`${this.baseUrl}/one?id=${id}`).pipe(
       map((obj) => obj),
       catchError((e) => this.error.handler(e))
@@ -47,6 +47,13 @@ export class ProdutoService {
 
   updateOne(produto: Produto): Observable<boolean> {
     return this.http.put<boolean>(this.baseUrl, produto, this.options).pipe(
+      map((obj) => obj),
+      catchError((e) => this.error.handler(e))
+    );
+  }
+
+  delete(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${this.baseUrl}?id=${id}`, this.options).pipe(
       map((obj) => obj),
       catchError((e) => this.error.handler(e))
     );

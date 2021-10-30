@@ -4,7 +4,7 @@ import { Municipio } from 'src/app/models/municipio';
 import { MunicipiosService } from 'src/app/services/municipios.service';
 import { Estado } from 'src/app/models/estado';
 import { EstadosService } from 'src/app/services/estados.service';
-
+ 
 @Component({
   selector: 'app-municipios-view',
   templateUrl: './municipios-view.component.html',
