@@ -8,7 +8,7 @@
 
         public string Sigla { get; set; }
 
-        public int Pais { get; set; }
+        public Pais Pais { get; set; }
 
         public bool Ativo { get; set; }
     }

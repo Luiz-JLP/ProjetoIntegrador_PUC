@@ -13,11 +13,9 @@ import { PaisesService } from 'src/app/services/paises.service';
 export class EstadosViewComponent implements OnInit {
 
   estados = new Array<Estado>();
-  paises = new Array<Pais>();
 
   constructor(
     private service: EstadosService,
-    private paisesService: PaisesService,
     private router: Router
   ) { }
 
@@ -26,19 +24,10 @@ export class EstadosViewComponent implements OnInit {
   }
 
   load(): void {
-    this.paisesService.get().subscribe(
-      result => { 
-        this.paises = result; 
-        this.service.get().subscribe(
-          result => {
-            this.estados = result; 
-            this.estados.forEach(
-              e => e.paisNome = this.paises.find(p => p.id == e.pais)?.descricao ?? ''
-            )
-          }
-        )
-      }
-    )    
+    this.service.get().subscribe(
+      estados => {
+        this.estados = estados;
+    })
   }
 
   create(): void {

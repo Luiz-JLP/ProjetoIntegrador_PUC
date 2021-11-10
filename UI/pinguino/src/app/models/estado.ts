@@ -1,17 +1,17 @@
+import { Pais } from "./pais";
+
 export class Estado {
 
     constructor() { 
         this.id = 0;
-        this.pais = 0;
-        this.paisNome = '';
+        this.pais = new Pais();
         this.descricao = '';
         this.sigla = '';
         this.ativo = true;
     }
 
     id: number;
-    pais: number;
-    paisNome: string;
+    pais: Pais;
     descricao: string;
     sigla: string;
     ativo: boolean;
