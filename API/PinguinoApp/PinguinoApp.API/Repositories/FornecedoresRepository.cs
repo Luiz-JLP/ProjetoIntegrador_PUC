@@ -56,14 +56,14 @@ namespace PinguinoApp.API.Repositories
         {
             string command = @"UPDATE public.fornecedores SET nome = @nome, cnpjcpf = @cnpjcpf, email = @email, endereco = @endereco WHERE id = @id;";
             await service.ScalarAsync<bool>(
-                command, 
-                parameters: new 
-                { 
-                    @nome = entity.Nome, 
-                    @cnpjcpf = entity.CnpjCpf, 
-                    @email = entity.Email, 
-                    @endereco = entity.Endereco, 
-                    @id = entity.Id 
+                command,
+                parameters: new
+                {
+                    @nome = entity.Nome,
+                    @cnpjcpf = entity.CnpjCpf,
+                    @email = entity.Email,
+                    @endereco = entity.Endereco,
+                    @id = entity.Id
                 }
            );
 

@@ -4,7 +4,6 @@ using PinguinoApp.API.Models;
 using PinguinoApp.API.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PinguinoApp.API.Controllers
@@ -31,7 +30,7 @@ namespace PinguinoApp.API.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            
+
         }
 
         [HttpGet]
@@ -45,7 +44,7 @@ namespace PinguinoApp.API.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            
+
         }
 
         [HttpGet("one")]

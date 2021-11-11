@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PinguinoApp.API.Models;
 using PinguinoApp.API.Services;
 using System.Collections.Generic;

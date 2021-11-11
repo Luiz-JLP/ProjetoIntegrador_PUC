@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace PinguinoApp.API.Models
+﻿namespace PinguinoApp.API.Models
 {
     public class Cliente
     {

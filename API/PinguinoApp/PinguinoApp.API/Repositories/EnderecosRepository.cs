@@ -1,6 +1,5 @@
 ﻿using PinguinoApp.API.Interfaces;
 using PinguinoApp.API.Models;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -39,12 +38,12 @@ namespace PinguinoApp.API.Repositories
         public async Task<bool> Insert(Endereco entity)
         {
             string command = @"INSERT INTO enderecos ( logradouro, numero, complemento, municipio, cep ) VALUES ( @logradouro, @numero, @complemento, @municipio, @cep );";
-            return await service.ScalarAsync<bool>(command, parameters: new 
-            { 
-                @logradouro = entity.Logradouro, 
-                @numero = entity.Numero, 
-                @complemento = entity.Complemento, 
-                @municipio = entity.Municipio, 
+            return await service.ScalarAsync<bool>(command, parameters: new
+            {
+                @logradouro = entity.Logradouro,
+                @numero = entity.Numero,
+                @complemento = entity.Complemento,
+                @municipio = entity.Municipio,
                 @cep = entity.Cep
             });
         }
@@ -77,8 +76,9 @@ namespace PinguinoApp.API.Repositories
                 @numero = entity.Numero,
                 @complemento = entity.Complemento,
                 @municipio = entity.Municipio,
-                @cep = entity.Cep, 
-                @id = entity.Id });
+                @cep = entity.Cep,
+                @id = entity.Id
+            });
         }
     }
 }

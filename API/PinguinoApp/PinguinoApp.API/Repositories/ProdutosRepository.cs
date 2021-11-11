@@ -38,7 +38,7 @@ namespace PinguinoApp.API.Repositories
         {
             string command = $"INSERT INTO {tabela} ( nome, sku, codigobarras, fornecedor, descricao, precovenda, ativo ) VALUES ( @nome, @sku, @codigobarras, @fornecedor, @descricao, @precovenda, @ativo );";
             await service.ScalarAsync<bool>(
-                command, 
+                command,
                 parameters: new
                 {
                     @nome = entity.Nome,
@@ -79,7 +79,7 @@ namespace PinguinoApp.API.Repositories
         {
             string command = $"UPDATE {tabela} SET nome=@nome, sku=@sku, codigobarras=@codigobarras, fornecedor=@fornecedor, descricao=@descricao, precovenda=@precovenda WHERE id = @id;";
             await service.ScalarAsync<bool>(
-                command, 
+                command,
                 parameters: new
                 {
                     @nome = entity.Nome,

@@ -2,10 +2,7 @@
 using PinguinoApp.API.Interfaces;
 using PinguinoApp.API.Models;
 using PinguinoApp.API.Repositories;
-using PinguinoApp.API.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PinguinoApp.API.Services
@@ -41,7 +38,7 @@ namespace PinguinoApp.API.Services
             {
                 return BadRequest(ex.Message);
             }
-            
+
         }
     }
 }

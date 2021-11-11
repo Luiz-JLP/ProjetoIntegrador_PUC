@@ -1,9 +1,9 @@
 ﻿
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using PinguinoApp.API.Models;
 using PinguinoApp.API.Services;
+using System.Threading.Tasks;
 
 namespace PinguinoApp.API.Controllers
 {
