@@ -4,44 +4,45 @@
     <hr />
   </mat-card-title>
 
-  <div class="mat-elevation-z3">
-    <table data-toggle="table" class="table table-striped table-hover">
+  <mat-card-content>
+    <div class="content">
+      <table data-toggle="table" class="table table-striped table-hover">
 
-      <thead>
-        <th>Código</th>
-        <th>Descrição</th>
-        <th>Estado</th>
-        <th>Ativo</th>
-        <th>Ações</th>
-      </thead>
+        <thead>
+          <th>Código</th>
+          <th>Descrição</th>
+          <th>Estado</th>
+          <th>Ativo</th>
+          <th>Ações</th>
+        </thead>
 
-      <tbody>
-        <tr *ngFor="let row of municipios.slice(5560, 99999)">
-          <td>{{row.id}}</td>
-          <td>{{row.descricao}}</td>
-          <td>{{row.estadoSigla}}</td>
-          <td>
-            <mat-checkbox [checked]="row.ativo" disabled></mat-checkbox>
-          </td>
-          <td>
-            <a class="edit-button" routerLink="/municipios/update/{{row.id}}">
-              <i class="material-icons"> edit </i>
-            </a>
-            <a class="delete-button" routerLink="/municipios/delete/{{row.id}}">
-              <i class="material-icons"> delete </i>
-            </a>
-          </td>
-        </tr>
-      </tbody>
+        <tbody>
+          <tr *ngFor="let row of municipios.slice(5560, 99999)">
+            <td>{{row.id}}</td>
+            <td>{{row.descricao}}</td>
+            <td>{{row.estadoSigla}}</td>
+            <td>
+              <mat-checkbox [checked]="row.ativo" disabled></mat-checkbox>
+            </td>
+            <td>
+              <a class="edit-button" routerLink="/municipios/update/{{row.id}}">
+                <i class="material-icons"> edit </i>
+              </a>
+              <a class="delete-button" routerLink="/municipios/delete/{{row.id}}">
+                <i class="material-icons"> delete </i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
 
-    </table>
+      </table>
 
-  </div>
-
-  <div class="buttons">
+    </div>
+  </mat-card-content>
+  <mat-card-footer>
     <hr />
-    <button mat-raised-button color="primary" (click)="create()">
+    <button class="buttons" mat-raised-button color="primary" (click)="create()">
       Novo Municipio
     </button>
-  </div>
+  </mat-card-footer>
 </mat-card>

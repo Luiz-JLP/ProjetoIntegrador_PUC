@@ -51,4 +51,11 @@ export class EstadosService {
       catchError((e) => this.error.handler(e))
     );
   }
+
+  delete(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${this.baseUrl}?id=${id}`, this.options).pipe(
+      map((obj) => obj),
+      catchError((e) => this.error.handler(e))
+    );
+  }
 }

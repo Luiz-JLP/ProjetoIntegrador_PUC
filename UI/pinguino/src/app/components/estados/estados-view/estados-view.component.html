@@ -1,12 +1,13 @@
 <mat-card class="home mat-elevation-z3">
-    <mat-card-title class="title">
-      <a>Estados</a>
-      <hr />
-    </mat-card-title>
-  
-    <div class="mat-elevation-z3">
+  <mat-card-title class="title">
+    <a>Estados</a>
+    <hr />
+  </mat-card-title>
+
+  <mat-card-content>
+    <div class="content">
       <table data-toggle="table" class="table table-striped table-hover">
-  
+
         <thead>
           <th>Código</th>
           <th>País</th>
@@ -15,7 +16,7 @@
           <th>Ativo</th>
           <th>Ações</th>
         </thead>
-  
+
         <tbody>
           <tr *ngFor="let row of estados">
             <td>{{row.id}}</td>
@@ -23,7 +24,7 @@
             <td>{{row.descricao}}</td>
             <td>{{row.sigla}}</td>
             <td>
-                <mat-checkbox [checked]="row.ativo" disabled></mat-checkbox>
+              <mat-checkbox [checked]="row.ativo" disabled></mat-checkbox>
             </td>
             <td>
               <a class="edit-button" routerLink="/estados/update/{{row.id}}">
@@ -35,15 +36,15 @@
             </td>
           </tr>
         </tbody>
-  
+
       </table>
-  
+
     </div>
-  
-    <div class="buttons">
-      <hr />
-      <button mat-raised-button color="primary" (click)="create()">
-        Novo Estado
-      </button>
-    </div>
-  </mat-card>
+  </mat-card-content>
+  <mat-card-footer>
+    <hr />
+    <button class="buttons" mat-raised-button color="primary" (click)="create()">
+      Novo Estado
+    </button>
+  </mat-card-footer>
+</mat-card>
