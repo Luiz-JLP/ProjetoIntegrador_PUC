@@ -1999,19 +1999,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sudat\\.nuget\\packages\\": {}
+    "C:\\Users\\jluiz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sudat\\Source\\Repos\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.Test\\PinguinoApp.Test.csproj",
+      "projectUniqueName": "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.Test\\PinguinoApp.Test.csproj",
       "projectName": "PinguinoApp.Test",
-      "projectPath": "C:\\Users\\sudat\\Source\\Repos\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.Test\\PinguinoApp.Test.csproj",
-      "packagesPath": "C:\\Users\\sudat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sudat\\Source\\Repos\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.Test\\obj\\",
+      "projectPath": "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.Test\\PinguinoApp.Test.csproj",
+      "packagesPath": "C:\\Users\\jluiz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sudat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jluiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2025,8 +2025,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\sudat\\Source\\Repos\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj": {
-              "projectPath": "C:\\Users\\sudat\\Source\\Repos\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj"
+            "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj": {
+              "projectPath": "C:\\Users\\jluiz\\source\\repos\\Git\\ProjetoIntegrador_PUC\\API\\PinguinoApp\\PinguinoApp.API\\PinguinoApp.API.csproj"
             }
           }
         }
@@ -2073,7 +2073,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
