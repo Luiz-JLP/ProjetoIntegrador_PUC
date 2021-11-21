@@ -1,4 +1,5 @@
 import { FornecedoresService } from 'src/app/services/fornecedores.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Fornecedor } from 'src/app/models/fornecedor';
 import { ProdutoService } from 'src/app/services/produto.service';
 import { Produto } from 'src/app/models/produto';
@@ -20,6 +21,8 @@ export class ProdutosCreateComponent implements OnInit {
   produto = new Produto();
   fornecedores = new Array<Fornecedor>();
 
+  formGroup = new FormGroup({});
+
   constructor(
     private service: ProdutoService,
     private fornecedoresService: FornecedoresService,
@@ -28,43 +31,67 @@ export class ProdutosCreateComponent implements OnInit {
     private message: MessageBoxService
   ) {
 
-    this.carregarFornecedores();
   }
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
-    if (id != null) {
-      this.isUpdate = true;
-      this.get(parseInt(id)); 
-      this.title = "Editar Município";
-    }
+    this.buildFormGroup();
+    this.load(id);
   }
 
-  carregarFornecedores(): void {
+  buildFormGroup(): void {
+    this.formGroup.addControl("id", new FormControl());
+    this.formGroup.addControl("nome", new FormControl('', Validators.required));
+    this.formGroup.addControl("sku", new FormControl('', Validators.required));
+    this.formGroup.addControl("codigobarras", new FormControl('', Validators.required));
+    this.formGroup.addControl("descricao", new FormControl('', Validators.required));
+    this.formGroup.addControl("precovenda", new FormControl('', Validators.required));
+    this.formGroup.addControl("fornecedor", new FormControl('', Validators.required));
 
-    this.fornecedoresService.get().subscribe(
-      result => {
-        this.fornecedores = result;
-      }
-    )
+  }
+
+  buildObject(): void {
+    this.produto.nome = this.formGroup.controls["nome"].value;
+    this.produto.sku = this.formGroup.controls["sku"].value;
+    this.produto.codigobarras = this.formGroup.controls["codigobarras"].value;
+    this.produto.descricao = this.formGroup.controls["descricao"].value;
+    this.produto.precovenda = this.formGroup.controls["precovenda"].value;
+    this.produto.fornecedorNome = this.fornecedores.find(f => f.id == this.formGroup.controls["fornecedor"].value)?.nome ?? '';
+  }
+
+
+  loadValues(): void {
+    this.formGroup.controls["id"].setValue(this.produto.id);
+    this.formGroup.controls["nome"].setValue(this.produto.nome);
+    this.formGroup.controls["sku"].setValue(this.produto.sku);
+    this.formGroup.controls["codigobarras"].setValue(this.produto.codigobarras);
+    this.formGroup.controls["descricao"].setValue(this.produto.descricao);
+    this.formGroup.controls["precovenda"].setValue(this.produto.precovenda);
+    this.formGroup.controls["fornecedor"].setValue(this.produto.fornecedor);
   }
 
   get(id: number): void {
-
-    this.fornecedoresService.get().subscribe(
+    this.service.getOne(id).subscribe(
       result => {
-        this.fornecedores = result;
-        this.service.getOne(id).subscribe(
-          result => {
-            this.produto = result;
-            this.produto.fornecedorNome = this.fornecedores.find(f => f.id == this.produto.fornecedor)?.nome ?? ' '
-          }
-        )
+        this.produto = result;
+        this.loadValues();
       }
     )
   }
 
+  load(id: string | null): void {
+    this.fornecedoresService.get().subscribe(
+      fornecedores => {
+        this.fornecedores = fornecedores;
+        if (id != null) {
+          this.isUpdate = true;
+          this.get(Number(id));
+        }
+      });
+  }
+
   save(): void {
+    this.buildObject();
     if (this.isUpdate)
       this.updateOne();
     else
@@ -94,4 +121,3 @@ export class ProdutosCreateComponent implements OnInit {
   }
 
 }
- 

@@ -1,8 +1,6 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
 import { Estado } from 'src/app/models/estado';
 import { Pais } from 'src/app/models/pais';
 import { EstadosService } from 'src/app/services/estados.service';
@@ -13,7 +11,7 @@ import { PaisesService } from 'src/app/services/paises.service';
   selector: 'app-estados-create',
   templateUrl: './estados-create.component.html',
   styleUrls: ['./estados-create.component.css']
-})
+}) 
 export class EstadosCreateComponent implements OnInit {
 
   estado = new Estado();
@@ -33,7 +31,7 @@ export class EstadosCreateComponent implements OnInit {
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
     this.buildFormGroup();
-    this.load(id);        
+    this.load(id);       
   }  
 
   buildFormGroup(): void {

@@ -8,7 +8,6 @@ export class Fornecedor {
         this.endereco = 0;
         this.enderecoLogradouro = '';
         this.ativo = true;
-  
     }
 
     id: number;
@@ -16,6 +15,6 @@ export class Fornecedor {
     cnpjCpf: string;
     email: string;
     endereco: number;
-    enderecoLogradouro: string;
+    enderecoLogradouro: string;    
     ativo: boolean;
 }

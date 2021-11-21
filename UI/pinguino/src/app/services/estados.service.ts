@@ -11,7 +11,6 @@ import { ErrorHandlerService } from './error-handler.service';
 export class EstadosService {
 
   baseUrl = "https://app-pinguino.herokuapp.com/v1/Estados";
-  //baseUrl = "https://localhost:44310/v1/Estados";
 
   options = {
     headers: new HttpHeaders({

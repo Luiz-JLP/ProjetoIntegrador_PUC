@@ -30,7 +30,7 @@ namespace PinguinoApp.Test
         }
 
         [Test]
-        public void firebirdIntegration()
+        public void SELECT_CADASTRO_ENDERECO_ID_1()
         {
             using (var httpClient = new HttpClient())
             {
@@ -48,6 +48,30 @@ namespace PinguinoApp.Test
                     complemento = "Casa",
                     municipio = 3964,
                     cep = "13661204",
+                    ativo = true
+                };
+                var response = result.Content.ReadAsStringAsync().Result;
+
+                Assert.AreEqual(JsonConvert.SerializeObject(expectedObject), response);
+            }
+        }
+
+        [Test]
+        public void SELECT_CADASTRO_PAIS_ID_1()
+        {
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri(baseURL);
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json")); //ACCEPT header
+                var result = httpClient.GetAsync("/v1/paises/one?id=1").Result;
+
+
+                var expectedObject = new
+                {
+                    id = 1,
+                    descricao = "Brasil",
+                    codigoArea = "+55",
                     ativo = true
                 };
                 var response = result.Content.ReadAsStringAsync().Result;
