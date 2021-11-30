@@ -1,6 +1,7 @@
 ﻿using PinguinoApp.API.Interfaces;
 using PinguinoApp.API.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace PinguinoApp.API.Repositories
@@ -24,15 +25,41 @@ namespace PinguinoApp.API.Repositories
 
         public async Task<IEnumerable<Produto>> Get()
         {
-            string command = $"SELECT id, nome, sku, codigobarras, fornecedor, descricao, precovenda, ativo FROM {tabela} WHERE ativo = true;";
-            return await service.ListAsync<Produto>(command);
+            IEnumerable<Produto> produtos = new List<Produto>();
+            string command = $@"SELECT p.id, p.nome, p.sku, p.codigobarras, p.descricao, p.precovenda, p.ativo,
+                                    f.id, f.nome, f.cnpjcpf, f.email, f.endereco, f.ativo
+                                FROM {tabela} p
+                                INNER JOIN public.fornecedores f 
+                                    on p.fornecedor = f.id and f.ativo = true
+                                WHERE p.ativo = true;";
+
+            using (var reader = await service.MultiAsync(command))
+            {
+                produtos = reader.Read<Produto, Fornecedor, Produto>((produto, fornecedor) => { produto.Fornecedor = fornecedor; return produto; });
+            }
+
+            return produtos;
         }
+
+       
 
         public async Task<Produto> Get(int id)
         {
-            string command = $"SELECT id, nome, sku, codigobarras, fornecedor, descricao, precovenda, ativo FROM {tabela} WHERE id = @id;";
-            return await service.SingleAsync<Produto>(command, parameters: new { @id = id });
-        }
+            IEnumerable<Produto> produtos = new List<Produto>();
+            string command = $@"SELECT p.id, p.nome, p.sku, p.codigobarras, p.descricao, p.precovenda, p.ativo,
+                                    f.id, f.nome, f.cnpjcpf, f.email, f.endereco, f.ativo
+                                FROM {tabela} p
+                                INNER JOIN public.fornecedores f 
+                                    on p.fornecedor = f.id and f.ativo = true
+                                WHERE p.ativo = true and p.id = @id;";
+
+            using (var reader = await service.MultiAsync(command, args: new { @id = id }))
+            {
+                produtos = produtos = reader.Read<Produto, Fornecedor, Produto>((produto, fornecedor) => { produto.Fornecedor = fornecedor; return produto; });
+            }
+
+            return produtos.FirstOrDefault();
+        }        
 
         public async Task<bool> Insert(Produto entity)
         {
@@ -44,7 +71,7 @@ namespace PinguinoApp.API.Repositories
                     @nome = entity.Nome,
                     @sku = entity.Sku,
                     @codigobarras = entity.Codigobarras,
-                    @fornecedor = entity.Fornecedor,
+                    @fornecedor = entity.Fornecedor.Id,
                     @descricao = entity.Descricao,
                     @precovenda = entity.Precovenda,
                     @ativo = entity.Ativo
@@ -66,7 +93,7 @@ namespace PinguinoApp.API.Repositories
                                                     @nome = entity.Nome,
                                                     @sku = entity.Sku,
                                                     @codigobarras = entity.Codigobarras,
-                                                    @fornecedor = entity.Fornecedor,
+                                                    @fornecedor = entity.Fornecedor.Id,
                                                     @descricao = entity.Descricao,
                                                     @precovenda = entity.Precovenda,
                                                     @ativo = entity.Ativo
@@ -85,7 +112,7 @@ namespace PinguinoApp.API.Repositories
                     @nome = entity.Nome,
                     @sku = entity.Sku,
                     @codigobarras = entity.Codigobarras,
-                    @fornecedor = entity.Fornecedor,
+                    @fornecedor = entity.Fornecedor.Id,
                     @descricao = entity.Descricao,
                     @precovenda = entity.Precovenda,
                 }

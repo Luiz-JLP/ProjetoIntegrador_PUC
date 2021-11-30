@@ -27,19 +27,12 @@ export class ProdutosViewComponent implements OnInit {
   }
 
   load(): void {
-    this.fornecedoresService.get().subscribe(
-      result => { 
-        this.fornecedores = result; 
-        this.service.get().subscribe(
-          result => {
-            this.produtos = result; 
-            this.produtos.forEach(
-              m => m.fornecedorNome = this.fornecedores.find(e => e.id == m.fornecedor)?.nome ?? ''              
-            )
-          }
-        )
+    this.service.get().subscribe(
+      result => {
+        this.produtos = result;
       }
-    )    
+    )
+
   }
 
   get(): void {

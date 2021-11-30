@@ -30,7 +30,7 @@ export class ProdutosCreateComponent implements OnInit {
     private route: ActivatedRoute,
     private message: MessageBoxService
   ) {
-
+ 
   }
 
   ngOnInit(): void {
@@ -56,7 +56,7 @@ export class ProdutosCreateComponent implements OnInit {
     this.produto.codigobarras = this.formGroup.controls["codigobarras"].value;
     this.produto.descricao = this.formGroup.controls["descricao"].value;
     this.produto.precovenda = this.formGroup.controls["precovenda"].value;
-    this.produto.fornecedorNome = this.fornecedores.find(f => f.id == this.formGroup.controls["fornecedor"].value)?.nome ?? '';
+    this.produto.fornecedor =   this.fornecedores.find(p => p.id == this.formGroup.controls["fornecedor"].value) ?? new Fornecedor();
   }
 
 
@@ -67,7 +67,7 @@ export class ProdutosCreateComponent implements OnInit {
     this.formGroup.controls["codigobarras"].setValue(this.produto.codigobarras);
     this.formGroup.controls["descricao"].setValue(this.produto.descricao);
     this.formGroup.controls["precovenda"].setValue(this.produto.precovenda);
-    this.formGroup.controls["fornecedor"].setValue(this.produto.fornecedor);
+    this.formGroup.controls["fornecedor"].setValue(this.produto.fornecedor.id);
   }
 
   get(id: number): void {

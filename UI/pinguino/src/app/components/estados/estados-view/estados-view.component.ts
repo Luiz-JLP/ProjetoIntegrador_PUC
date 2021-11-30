@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Estado } from 'src/app/models/estado';
-import { Pais } from 'src/app/models/pais';
 import { EstadosService } from 'src/app/services/estados.service';
-import { PaisesService } from 'src/app/services/paises.service';
 
 @Component({
   selector: 'app-estados-view',

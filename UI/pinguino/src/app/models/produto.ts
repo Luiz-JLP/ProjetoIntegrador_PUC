@@ -1,3 +1,4 @@
+import { Fornecedor } from './fornecedor';
 export class Produto {
 
     constructor() {
@@ -5,9 +6,8 @@ export class Produto {
         this.nome = '';
         this.sku = '';
         this.codigobarras = '';
-        this.fornecedor = 0;
-        this.fornecedorNome = '';
-        this.descricao = ''
+        this.fornecedor = new Fornecedor();
+            this.descricao = ''
         this.precovenda = 0.0;
         this.ativo = true;
     }
@@ -16,9 +16,8 @@ export class Produto {
     nome: string;
     sku: string;
     codigobarras: string;
-    fornecedor: number;
-    fornecedorNome: string;
+    fornecedor: Fornecedor;
     descricao: string;
-    precovenda : number
+    precovenda: number
     ativo: boolean;
 }
