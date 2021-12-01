@@ -17,6 +17,8 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from "@angular/common/http";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatIconModule} from '@angular/material/icon';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -94,7 +96,8 @@ import { ProdutosViewComponent } from './components/produtos/produtos-view/produ
     MatTreeModule,
     MatTableModule,
     HttpClientModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
