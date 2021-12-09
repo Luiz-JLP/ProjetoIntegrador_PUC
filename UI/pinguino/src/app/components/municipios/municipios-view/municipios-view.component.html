@@ -20,7 +20,7 @@
           <tr *ngFor="let row of municipios.slice(5560, 99999)">
             <td>{{row.id}}</td>
             <td>{{row.descricao}}</td>
-            <td>{{row.estadoSigla}}</td>
+            <td>{{row.estado.sigla}}</td>
             <td>
               <mat-checkbox [checked]="row.ativo" disabled></mat-checkbox>
             </td>

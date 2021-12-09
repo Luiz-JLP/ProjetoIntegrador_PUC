@@ -10,7 +10,8 @@ import { ErrorHandlerService } from './error-handler.service';
 })
 export class EnderecosService {
 
-  baseUrl = "https://app-pinguino.herokuapp.com/v1/Enderecos";
+  //baseUrl = "https://app-pinguino.herokuapp.com/v1/Enderecos";
+  baseUrl = "https://localhost:44310/v1/Enderecos";
 
   options = {
     headers: new HttpHeaders({

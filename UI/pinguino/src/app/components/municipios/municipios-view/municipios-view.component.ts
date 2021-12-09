@@ -32,14 +32,9 @@ export class MunicipiosViewComponent implements OnInit {
         this.estados = result; 
         this.service.get().subscribe(
           result => {
-            this.municipios = result; 
-            this.municipios.forEach(
-              m => m.estadoSigla = this.estados.find(e => e.id == m.estado)?.sigla ?? ''              
-            )
-          }
-        )
-      }
-    )    
+            this.municipios = result;             
+        });
+    });    
   }
 
   get(): void {

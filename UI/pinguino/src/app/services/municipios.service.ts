@@ -11,7 +11,8 @@ import { ErrorHandlerService } from './error-handler.service';
 })
 export class MunicipiosService {
 
-  baseUrl = "https://app-pinguino.herokuapp.com/v1/Municipios";
+  //baseUrl = "https://app-pinguino.herokuapp.com/v1/Municipios";
+  baseUrl = "https://localhost:44310/v1/Municipios";
 
   options = {
     headers: new HttpHeaders({

@@ -33,9 +33,7 @@ export class FornecedoresViewComponent implements OnInit {
         this.service.get().subscribe(
           result => {
             this.fornecedores = result; 
-            this.fornecedores.forEach(
-              f => f.enderecoLogradouro = this.enderecos.find(e => e.id == e.municipio)?.logradouro ?? ''              
-            )
+            
           }
         )
       }

@@ -15,7 +15,8 @@
           <th>Cep</th>
           <th>Complemento</th>
           <th>Município</th>
-          <th>Ativo</th>
+          <th>Estado</th>
+          <th>Pais</th>
         </thead>
 
         <tbody>
@@ -25,10 +26,9 @@
             <td>{{row.numero}}</td>
             <td>{{row.cep}}</td>
             <td>{{row.complemento}}</td>
-            <td>{{row.municipioDescricao}}</td>
-            <td>
-              <mat-checkbox [checked]="row.ativo" disabled></mat-checkbox>
-            </td>
+            <td>{{row.municipio.descricao}}</td>
+            <td>{{row.municipio.estado.descricao}}</td>
+            <td>{{row.municipio.estado.pais.descricao}}</td>
             <td>
               <a class="edit-button" routerLink="/enderecos/update/{{row.id}}">
                 <i class="material-icons"> edit </i>

@@ -57,11 +57,8 @@ export class MunicipiosCreateComponent implements OnInit {
         this.service.getOne(id).subscribe(
           result => {
             this.municipio = result;
-            this.municipio.estadoSigla = this.estados.find(e => e.id == this.municipio.estado)?.sigla ?? ' '
-          }
-        )
-      }
-    )
+        });
+    });
   }
 
   save(): void {

@@ -20,7 +20,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class EnderecosCreateComponent implements OnInit {
 
   title = "Novo Endereco";
-  isUpdate: boolean = false;
+  isUpdate = false;
 
   endereco = new Endereco();
 
@@ -43,17 +43,24 @@ export class EnderecosCreateComponent implements OnInit {
     private route: ActivatedRoute,
     private message: MessageBoxService
   ) {
-    this.load();
     this.buildGroup();
   }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get('id');
-    if (id != null) {
-      this.isUpdate = true;
-      this.get(id);
-      this.title = "Editar Endereço";
-    }
+    let id = this.route.snapshot.paramMap.get('id'); 
+
+    this.load().then(
+      value => {
+        console.log("Value: ", value);
+        if (id != null) {         
+          this.get(id);
+          this.isUpdate = true;
+          this.title = "Editar Endereço";
+        }
+    })
+    .catch(
+      value => { console.log("Ocorreu um erro") }
+    )    
   }
 
   buildGroup(): void {
@@ -69,7 +76,7 @@ export class EnderecosCreateComponent implements OnInit {
     this.formGroup.controls["pais"].setValue("1");
   }
 
-  buildObject(): void {
+  formGroupGetValue(): void {
     this.endereco.cep = this.formGroup.controls["cep"].value;
     this.endereco.logradouro = this.formGroup.controls["logradouro"].value;
     this.endereco.numero = this.formGroup.controls["numero"].value;
@@ -77,53 +84,56 @@ export class EnderecosCreateComponent implements OnInit {
     this.endereco.municipio = this.formGroup.controls["municipio"].value;
   }
 
-  loadValues(): void {
+  formGroupSetValue(): void {    
     this.formGroup.controls["id"].setValue(this.endereco.id);
     this.formGroup.controls["cep"].setValue(this.endereco.cep);
     this.formGroup.controls["logradouro"].setValue(this.endereco.logradouro);
     this.formGroup.controls["numero"].setValue(this.endereco.numero);
     this.formGroup.controls["complemento"].setValue(this.endereco.complemento);
+    this.formGroup.controls["pais"].setValue(this.endereco.municipio.estado.pais.id);   
+    this.formGroup.controls["estado"].setValue(this.endereco.municipio.estado.id);
     this.formGroup.controls["municipio"].setValue(this.endereco.municipio);
-    this.formGroup.controls["estado"].setValue("26");
-    this.formGroup.controls["pais"].setValue("1");
   }
 
-  load(): void {  
-    this.paisesService.get().subscribe(
-      result => { 
-        this.paises_all = result; 
-        this.paises = result;
-        this.estadosService.get().subscribe(
-          result => {
-            this.estados_all = result; 
-            this.estados = this.estados_all.filter(e => e.pais.id == 1);
-            this.municipiosService.get().subscribe(
-              result => { 
-                this.municipios_all = result; 
-                this.municipios = result;
-            });
-        });
-    });       
+  load(): Promise<boolean> {
+    var promisse = new Promise<boolean>(() => {
+      this.paisesService.get().subscribe(
+        result => { 
+          this.paises_all = result; 
+          this.paises = result;
+          console.log("Paises Carregado")
+          this.estadosService.get().subscribe(
+            result => {
+              this.estados_all = result; 
+              this.estados = this.estados_all.filter(e => e.pais.id == 1);
+              console.log("Estados Carregado")
+              this.municipiosService.get().subscribe(
+                result => { 
+                  this.municipios_all = result;  
+                  console.log("Municipios Carregado")  
+              });
+          });
+      }); 
+    });    
+
+    return promisse;
   }
 
   get(id: string): void {
+    console.log("Inicio Get")
+    this.service.getOne(id).subscribe(
+      endereco => {
+        this.endereco = endereco;
 
-    this.municipiosService.get().subscribe(
-      result => {
-        this.municipios = result;
-        this.service.getOne(id).subscribe(
-          result => {
-            this.endereco = result;
-            this.endereco.municipioDescricao = this.municipios.find(m => m.id == this.endereco.municipio)?.descricao ?? ' '
-            this.loadValues();
-          } 
-        )
-      }
-    )
+        this.estados = this.estados_all.filter(e => e.pais.id == this.endereco.municipio.estado.pais.id);    
+        this.municipios = this.municipios_all.filter(m => m.estado.id == this.endereco.municipio.estado.id);
+
+        this.formGroupSetValue();
+    });
   }
 
   save(): void {
-    this.buildObject();
+    this.formGroupGetValue();
     if (this.isUpdate)
       this.updateOne();
     else
@@ -155,11 +165,22 @@ export class EnderecosCreateComponent implements OnInit {
   paisSelectionChange(event: MatOptionSelectionChange): void {
     if (event.isUserInput)
     {
-      console.log("Evento")
       this.estados = new Array<Estado>();
       this.estados = this.estados_all.filter(e => e.pais.id == parseInt(event.source.value));
 
+      this.municipios = new Array<Municipio>();
+
       this.formGroup.controls["estado"].setValue('');
+      this.formGroup.controls["municipio"].setValue('');
+    }
+  }
+
+  estadoSelectionChange(event: MatOptionSelectionChange): void {
+    if (event.isUserInput)
+    {
+      this.municipios = new Array<Municipio>();
+      this.municipios = this.municipios_all.filter(m => m.estado.id == parseInt(event.source.value));
+
       this.formGroup.controls["municipio"].setValue('');
     }
   }
